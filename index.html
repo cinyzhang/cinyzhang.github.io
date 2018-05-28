@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpw37u6000174guv8x7e8ol" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpw6dap0000s8gui9lioksn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
@@ -130,16 +130,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        The article has been encrypted, please enter your password to view.<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/05/28/scala-base-enhance-md/#more">Read More</a>
-          </p>
-        
+        <h2 id="yiled"><a href="#yiled" class="headerlink" title="yiled"></a>yiled</h2><p>如果for循环的循环体以yield开始，则该循环会构造一个集合，每次迭代生成集合中的一个值；这类循环叫for推导式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val oushu=for(i &lt;- 1 until 10 if i % 2 ==0 ) yield i*2 //方式一</span><br><span class="line">val arr=Array(1 until 10:_*)</span><br><span class="line">val oushu2=arr.filter(_%2==0).map(_*2) //方式2</span><br></pre></td></tr></table></figure>
+<p>==scala&gt;<br>oushu: scala.collection.immutable.IndexedSeq[Int] = Vector(4, 8, 12, 16)==</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>一般函数可以没有返回值类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def add(a:Int,b:Int)=a+b</span><br></pre></td></tr></table></figure></p>
+<p>递归函数必须要有返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def fac(n:Int):Int=&#123;</span><br><span class="line">    if(n==0) </span><br><span class="line">      0  </span><br><span class="line">    else if(n==1) </span><br><span class="line">     1 </span><br><span class="line">    else</span><br><span class="line">     fac(n-1)+fac(n-2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>函数的默认值和命名参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def  whoLoveCountry(prefix:String=&quot;i&quot;,express:String=&quot;love&quot;,country:String)=&#123;</span><br><span class="line">    prefix+&quot; &quot;+express+&quot; &quot;+country</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>==scala&gt; whoLoveCountry(country=”Taiwan”)<br>res14: String = i love Taiwan==</p>
+<p>==scala&gt; whoLoveCountry(country=”China”,express=”hate”)<br>res16: String = i hate China==</p>
+<p>变长参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def add(a:Int*)=&#123;</span><br><span class="line">    var sum=0;</span><br><span class="line">    for(i&lt;-a)&#123;</span><br><span class="line">        sum+=i</span><br><span class="line">    &#125;</span><br><span class="line">    sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>==scala&gt; add(1,2,3)<br>res18: Int = 6==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add(1 to 10)</span><br></pre></td></tr></table></figure>
+<p>==scala&gt; add(1 to 5)</p>
+<p><console>:9: error: type mismatch;<br> found   : scala.collection.immutable.Range.Inclusive<br> required: Int<br>              add(1 to 5)==</console></p>
+<p>_* 将集合作为参数序列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add(1 to 10:_*)</span><br></pre></td></tr></table></figure></p>
+<p>==scala&gt; add(1 to 10:_*)<br>res20: Int = 55==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def reclusiveSum(args:Int*):Int=&#123;</span><br><span class="line">    if(args.length==0)&#123;</span><br><span class="line">        0</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        args.head+reclusiveSum(args.tail:_*)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>==scala&gt; reclusiveSum(1,2,3,4,5)<br>res21: Int = 15==</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>对于没有返回值，没有等号的函数叫做过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def out(a:Int)&#123;</span><br><span class="line">    print(100)</span><br><span class="line">    100+a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def out(a:Int):Unit=&#123;</span><br><span class="line">    print(100)</span><br><span class="line">    100+a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上两种方式等价</p>
+<p>==scala&gt; def out(a:Int){<br>     |     print(a)<br>     |     100+a<br>     | }<br>out: (a: Int)Unit==</p>
+<p>==scala&gt; out(100)<br>10==</p>
+<h2 id="懒值"><a href="#懒值" class="headerlink" title="懒值"></a>懒值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val myfile=scala.io.Source.fromFile(&quot;D:/testfile.txt&quot;).mkString</span><br><span class="line">lazy val myfile=scala.io.Source.fromFile(&quot;D:/testfile.txt&quot;).mkString</span><br></pre></td></tr></table></figure>
+<p>==scala&gt; val myfile=scala.io.Source.fromFile(“D:/testfile.txt”).mkString<br>myfile: String =<br>“i like baby<br>and you?<br>“==</p>
+<p>==scala&gt; lazy val myfile=scala.io.Source.fromFile(“D:/testfile.txt”).mkString<br>myfile: String = <lazy>==</lazy></p>
+<p>==scala&gt; printf(“the content is %s”,myfile)<br>the content is i like baby<br>and you?==</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><ol>
+<li>scala所有的异常都是运行时异常，设计者觉得“首检”不好；</li>
+<li>throw表达式有特殊的返回值Nothing,在if/else表达式中，如果一个分支的返回值是Nothing，则表达式的返回值类型是另一个分支的类型；</li>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line"> val myfile=scala.io.Source.fromFile(&quot;D:/testfile2.txt&quot;).mkString</span><br><span class="line">&#125;catch&#123;</span><br><span class="line">    case _:Exception =&gt; println(&quot;xxx&quot;)</span><br><span class="line">    case ex:java.io.IOException =&gt; </span><br><span class="line">    println(ex)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>==xxx==</p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>定长数组Array<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val arr1=new Array[Int](10)</span><br><span class="line">val arr2=Array(&quot;zhangsan&quot;,2)</span><br><span class="line">arr2(0)</span><br><span class="line">arr2.toBuffer//转变长</span><br></pre></td></tr></table></figure></p>
+<p>变长数组ArrayBuffer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable.ArrayBuffer</span><br><span class="line">val buf=ArrayBuffer[Int]()</span><br><span class="line">buf+=(1,2,3) //在末尾追加元素</span><br><span class="line">buf++=Array(4,5,6)//在末尾追加任意集合</span><br><span class="line">buf.trimEnd(2)//末尾移除两个元素</span><br><span class="line">buf.trimStart(2)//起始移除两个元素</span><br><span class="line">buf.insert(0,1,2)//在下标0的位置插入1和2</span><br><span class="line">buf.remove(0,1)//从下标0开始移除1个元素</span><br><span class="line">buf.toArray//转定长</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhpw37u1000074guheg45da0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhpw6dav0001s8guybcwcxra" class="article-share-link">Share</a>
       
       
     </footer>
