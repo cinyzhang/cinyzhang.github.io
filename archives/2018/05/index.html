@@ -5,7 +5,7 @@
   <script>
     (function(){
         if('{{ page.password }}'){
-            if (prompt('请QQ联系1026636822索要密码') !== '{{ page.password }}'){
+            if (prompt('请QQ联系1026636822索要密码') != '{{ page.password }}'){
                 alert('密码错误！');
                 history.back();
             }
