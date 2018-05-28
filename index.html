@@ -2,20 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
   
 
   
-  <title>Hexo</title>
+  <title>cinyzhang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="personal web site">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cinyzhang">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="cinyzhang">
+<meta property="og:description" content="personal web site">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="cinyzhang">
+<meta name="twitter:description" content="personal web site">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="cinyzhang" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,7 +47,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">cinyzhang</a>
       </h1>
       
     </div>
@@ -126,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpt1aeh0001v4gu74e5zt2c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpv7l720000qkguxey72ios" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
@@ -200,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhpt1aec0000v4gun5ehlvc9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhpv7l770001qkgu2dizfh2d" class="article-share-link">Share</a>
       
       
     </footer>

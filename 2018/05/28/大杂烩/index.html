@@ -2,17 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
   
 
   
-  <title>大杂烩 | Hexo</title>
+  <title>大杂烩 | cinyzhang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Gitgit clone git add [-A]  git commit -m ‘’ git push git pull 查看分支：git branch 创建分支：git branch  切换分支：git checkout  创建+切换分支：git checkout -b  合并某分支到当前分支：git merge  删除分支：git branch -d  Linux ntp同步Linux系统时">
 <meta name="keywords" content="命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大杂烩">
 <meta property="og:url" content="http://yoursite.com/2018/05/28/大杂烩/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="cinyzhang">
 <meta property="og:description" content="Gitgit clone git add [-A]  git commit -m ‘’ git push git pull 查看分支：git branch 创建分支：git branch  切换分支：git checkout  创建+切换分支：git checkout -b  合并某分支到当前分支：git merge  删除分支：git branch -d  Linux ntp同步Linux系统时">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-05-28T05:12:42.805Z">
@@ -20,7 +30,7 @@
 <meta name="twitter:title" content="大杂烩">
 <meta name="twitter:description" content="Gitgit clone git add [-A]  git commit -m ‘’ git push git pull 查看分支：git branch 创建分支：git branch  切换分支：git checkout  创建+切换分支：git checkout -b  合并某分支到当前分支：git merge  删除分支：git branch -d  Linux ntp同步Linux系统时">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="cinyzhang" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -39,7 +49,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">cinyzhang</a>
       </h1>
       
     </div>
@@ -129,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpt1aeh0001v4gu74e5zt2c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpv7l720000qkguxey72ios" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
