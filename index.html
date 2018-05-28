@@ -2,6 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请QQ联系1026636822索要密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+ </script>
   
 
   
@@ -126,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhpp3fo10000b0gugcnnjmrw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhppnhuc00019ggub690lvn3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
@@ -200,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhpp3fo70001b0guxm3izhx2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhppnhu800009ggukoxdold2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,13 +281,7 @@
         
       </div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+ 
 </footer>
     </div>
     <nav id="mobile-nav">
