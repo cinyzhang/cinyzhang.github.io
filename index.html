@@ -91,16 +91,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        this is a private Message, please contact us with QQ(1026636822).
-        
-          <p class="article-more-link">
-            <a href="/2018/05/28/大杂烩/#more">Read More</a>
-          </p>
-        
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>git clone</p>
+<p>git add [-A] <filename></filename></p>
+<p>git commit -m ‘’</p>
+<p>git push</p>
+<p>git pull</p>
+<p>查看分支：git branch</p>
+<p>创建分支：git branch <name></name></p>
+<p>切换分支：git checkout <name></name></p>
+<p>创建+切换分支：git checkout -b <name></name></p>
+<p>合并某分支到当前分支：git merge <name></name></p>
+<p>删除分支：git branch -d <name></name></p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ol>
+<li>ntp同步Linux系统时间 ntpdate cn.pool.ntp.org</li>
+<li>tar xvJf  ***.tar.xz</li>
+<li>:3,6 s/^/#/g</li>
+<li>kill <code>ps -ef | grep Elasticsearch | grep -v grep | awk &#39;{print $2}&#39;</code></li>
+<li>$@ = stores all the arguments in a list of string</li>
+<li>$* = stores all the arguments as a single string</li>
+<li>$# = stores the number of arguments</li>
+<li>vi /etc/inittab  id:5:initdefault:改成<br>id:3:initdefault:</li>
+</ol>
+<h1 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark-shell --master spark://mini:7077 --total-executor-cores 2 --executor-memory 1G</span><br></pre></td></tr></table></figure>
+<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn -DoutputDirectory=./lib  -DgroupId=io.burinicc -DartifactId=callLogConsumer -Dversion=1.0-SNAPSHOT dependency:copy-dependencies</span><br><span class="line">ls lib | echo `xargs` | sed &apos;s/ /:/g&apos; &gt;&gt; 1.txt</span><br></pre></td></tr></table></figure>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>在装有MySQL的机器上登录MySQL mysql -u root -p密码<br>执行use mysql;<br>执行update user set host = ‘%’ where user = ‘root’;这一句执行完可能会报错，不用管它。<br>执行FLUSH PRIVILEGES;</p>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data local inpath &apos;/home/fzpxt/griffin/testdata/hive_new.txt&apos; into table agg_gray_smscdr partition(day=&apos;20170324&apos;,timestamp=&apos;1830&apos;);</span><br></pre></td></tr></table></figure>
+<h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng build -prod --aot=false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://placehold.it/300x150</span><br></pre></td></tr></table></figure>
+<h1 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h1><p>ctrl+d向下选择相同的内容</p>
+<h1 id="CallLog"><a href="#CallLog" class="headerlink" title="CallLog"></a>CallLog</h1><ol>
+<li>start-dfs.sh</li>
+<li>zkServer.sh start</li>
+<li>start-hbase.sh</li>
+<li>kafka-server-start.sh -daemon /home/fzpxt/griffin/kafka/kafka_2.11-0.10.2.1/config/server.properties</li>
+<li>flume-ng agent -f /home/fzpxt/griffin/flume/apache-flume-1.7.0-bin/conf/calllog.conf -n a1 &amp;</li>
+</ol>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i  --trusted-host  http://pypi.douban.com/simple/pandas</span><br></pre></td></tr></table></figure>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr &quot;2181&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /PID 666</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhswmb7y000124guk1kxxyhg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/大杂烩/" data-id="cjhswrhea0003fsguj3cfanlx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li></ul>
@@ -126,7 +159,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/scala-base-enhance-md/">scala 基础</a>
+      <a class="article-title" href="/2018/05/28/scala-base-enhance-md/">scala</a>
     </h1>
   
 
@@ -174,9 +207,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhswmb7t000024guil6lu9br" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/28/scala-base-enhance-md/" data-id="cjhswrhds0000fsgu47xd1xlm" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scala/">scala</a></li></ul>
+
     </footer>
   </div>
   
@@ -197,7 +232,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scala/">scala</a></li></ul>
     </div>
   </div>
 
@@ -207,7 +242,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a>
+      <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/scala/" style="font-size: 10px;">scala</a>
     </div>
   </div>
 
@@ -233,7 +268,7 @@
           </li>
         
           <li>
-            <a href="/2018/05/28/scala-base-enhance-md/">scala 基础</a>
+            <a href="/2018/05/28/scala-base-enhance-md/">scala</a>
           </li>
         
       </ul>
